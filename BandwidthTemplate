@@ -1,0 +1,14 @@
+Value WAN_Data (\d+)
+Value LAN_Data (\d+)
+Value Reduction (\d+)
+Value Reduction_Peak (\d+)
+Value Reduction_Peak_Date (\d+\/\d+\/\d+\d+ \d+:\d+:\d+)
+Value Capacity_Increase (\d+)
+
+Start
+ ^WAN Data:\W+${WAN_Data}\W\w+
+ ^LAN Data:\W+${LAN_Data}\W\w+
+ ^Data Reduction:\W+${Reduction}\W\%
+ ^Data Reduction Peak:\W+${Reduction_Peak}\W\%
+ ^Data Reduction Peak Time:\W+${Reduction_Peak_Date}
+ ^Capacity Increase:\W+${Capacity_Increase}\WX -> Record
